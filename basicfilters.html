@@ -1,0 +1,32 @@
+<!-- Initially written in codepen.io, but then I wanted some practice with git.... so here we are 
+Original codepen may be found at:  https://codepen.io/mudson/pen/yLLLzrq
+-->
+<HTML>
+	<head>
+		<script src="http://www.dukelearntoprogram.com/course1/common/js/image/SimpleImage.js"></script>
+		<script src="basicfilters.js"></script>"
+		<link rel="stylesheet" type="text/css" href="basicfilters.css">
+		<title>Basic Filtering Exercise</title>
+	</head>
+	<body>
+		<h1>Basic Filters Implementation</h1>
+		<!--Begin control block-->
+		<div id="controls">
+		<input type="file" multiple="false" accept="image/*" id="thepicture" onchange="loadImage()" class="piccontrol">
+		<input type="button" value="Undo Auto-Scale" onclick="loadNoResize()" class="piccontrol">
+		<input type="button" value="Grayscale" onclick="makeGray()" class="piccontrol">
+		<input type="button" value="All Red" onclick="makeRed()" class="piccontrol">
+		<input type="button" value="Blur (lowpass)" onclick="lowpass()" class="piccontrol">
+		<input type="button" value="Edge Find (highpass)" onclick="highpass()" class="piccontrol">
+		<input type="button" value="Rainbow" onclick="rainbow()" class="piccontrol">
+		<input type="button" value="Reset" onclick="reset()" class="piccontrol">
+		</div>
+		<!--End control block-->
+		<!--Begin display block-->
+		<div id="display">
+		<canvas id="cnvs"></canvas>
+		</div>
+		<!--End display block-->
+		<footer id="WHO">MH</footer>
+	</body>
+</HTML>

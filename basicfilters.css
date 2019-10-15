@@ -1,0 +1,38 @@
+body{
+  background-color:#2E4272;
+  font-family:sans-serif;
+}
+h1,h2{
+  font-family:monospace;
+  color:#061539;
+}
+
+#controls{
+  border:1px solid #162955;
+  background-color:#4F628E;
+  border-radius:5px;
+  display:inline;
+  padding:2px 6px 2px 6px;
+}
+
+#display{
+  padding:3px;
+}
+canvas{
+  border:1px solid #162955;
+  border-radius:5px;
+}
+
+.piccontrol{
+  border:1px solid #162955;
+  font-family:sans-serif;
+  color:#BBB;
+  background-color:#2E4272;
+  
+  border-radius:5px;
+}
+
+#WHO{
+  /*MH*/
+  color:#2E4272;
+}
