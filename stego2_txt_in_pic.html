@@ -1,0 +1,42 @@
+<!-- Same principle as hiding an image (https://codepen.io/mudson/pen/dyyyaKx), only we'll occupy the LSB of the image pixels with ASCII value for each character. 
+Typical ASCII ranges from 32 to 126.  Can offset that by 32 to make better use of available range, since we have R G and B values to work with, can potentially setup a parity scheme to identify the presence of hidden information.
+Process will be:
+per character--
+-get ascii value
+--hide MSB of ascii value in pixel R LSB
+---hide LSB of ascii value in pixel G LSB
+----hide parity value in pixel B LSB
+Successful parity implementation opens up opportunities for using non-consecutive pixels for data hiding.
+Considerations:  
+-Preface message with entire string length?
+-XOR MSB and LSB for parity?
+-To ensure validity of parity, will want to run through image before hiding message, and break any pixels that already fulfill parity requirements.  An added bonus is that added noise will frustrate future steganalysis efforts
+
+Using colors is an easy way to do this. More effective at concealing the message would be to restrict the tool to JPGs, and hide the ASCII values in the JPG's DCT coefficients.
+-->
+<HTML>
+	<head>
+		<script src="http://www.dukelearntoprogram.com/course1/common/js/image/SimpleImage.js"></script>
+		<script src="stego2_txt_in_pic.js"></script>
+		<link rel="stylesheet" type="text/css" href="stego2_txt_in_pic.css">
+		<title>Steganography:  Hide Text in Images</title>
+	</head>
+	<body>
+		<h1>Steganography:  Hide Text in Image</h1>
+		<div id="controls">
+		Cover image:  <input type="file" multiple="false" accept="image/*" id="fcover" onchange="loadCover()"><br /><br />
+		Message:  <input type="text" id="secret">
+		<input type="button" value="Hide message" onclick="hideMessage()">
+		</div>
+		<br />
+		<div id="display" class="display">
+		<canvas id="coverClean"></canvas>
+		<canvas id="coverHiding"></canvas>
+		</div>
+		<br /><br />
+		<div id="controls2">
+		<input type="button" value="Extract message" onclick="extractMsg()">
+		<output type="text" id="extractedMsg"></output>
+		</div>
+	</body>
+</HTML>

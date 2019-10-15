@@ -1,0 +1,25 @@
+body{
+  font-family:monospace;
+  background-color:#858586;
+  color:#000;
+}
+h1{
+  font-family:sans-serif;
+  color:#2C265E;
+}
+
+canvas{
+  border:1px solid #2C265E;
+  -webkit-border-readius:5px;
+  -mos-border-radius:5px;
+  border-radius:5px;
+  box-shadow:0px 0px 5px #2C265E;
+}
+.display{
+  border:2px solid #2C265E;
+  -webkit-border-readius:5px;
+  -mos-border-radius:5px;
+  border-radius:5px;
+  padding:2px 3px 2px 3px;
+  display:inline-block;
+}
