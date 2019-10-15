@@ -1,0 +1,29 @@
+<HTML>
+	<head>
+	<script src="http://www.dukelearntoprogram.com/course1/common/js/image/SimpleImage.js"></script>
+	<script src="stego1_pic_in_pic.js"></script>
+	<link rel="stylehseet" type="text/css" href="stego1_pic_in_pic.css">
+	</head>
+	<body>
+	<h1>Steganography Tool:  Hide Image in Image</h1>
+	<div id="controls" class="ctrls">
+	Cover:&nbsp;&nbsp;&nbsp;<input type="file" multiple="false" accept="image/*" onchange="loadCover()" id="cvr" class="zip"><br />
+	Message:  <input type="file" multiple="false" accept="image/*" onchange="loadMsg()" id="msg" class="zip"><br /><br />
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" value="Conceal Message" onclick="conceal()" id="conceal" class="zip">
+	</div>
+	<br /><br />
+	<div id="display" class="display">
+	<canvas id="cover"></canvas>
+	<canvas id="message"></canvas>
+	<canvas id="composite"></canvas>
+	</div>
+	<br /><br />
+	<div id="controls2"  class="ctrls">
+	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type="button" value="Extract Message" onclick="extract()">
+	</div>
+	<br />
+	<div id="display2" class="display">
+	<canvas id="extracted"></canvas>
+	</div>
+	</body>
+</HTML>
